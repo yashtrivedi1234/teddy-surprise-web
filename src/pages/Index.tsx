@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LoveStory from "@/components/LoveStory";
 import ReasonsSection from "@/components/ReasonsSection";
 import MemoryGallery from "@/components/MemoryGallery";
+import CountdownTimer from "@/components/CountdownTimer";
 import ProposalSection from "@/components/ProposalSection";
 import NightModeToggle from "@/components/NightModeToggle";
 
@@ -15,6 +16,7 @@ const Index = () => {
       <LoveStory />
       <ReasonsSection />
       <MemoryGallery />
+      <CountdownTimer />
       <ProposalSection />
 
       {/* Footer */}

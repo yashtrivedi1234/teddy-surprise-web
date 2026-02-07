@@ -6,12 +6,14 @@ import MemoryGallery from "@/components/MemoryGallery";
 import CountdownTimer from "@/components/CountdownTimer";
 import ProposalSection from "@/components/ProposalSection";
 import NightModeToggle from "@/components/NightModeToggle";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 const Index = () => {
   return (
     <div className="relative overflow-x-hidden">
       <FloatingHearts />
       <NightModeToggle />
+      <BackgroundMusic />
       <HeroSection />
       <LoveStory />
       <ReasonsSection />

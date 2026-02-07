@@ -1,48 +1,33 @@
-import { useState } from "react";
-import FloatingHearts from "@/components/FloatingHearts";
 import HeroSection from "@/components/HeroSection";
-import LoveStory from "@/components/LoveStory";
-import ReasonsSection from "@/components/ReasonsSection";
-import MemoryGallery from "@/components/MemoryGallery";
-import CountdownTimer from "@/components/CountdownTimer";
-import ProposalSection from "@/components/ProposalSection";
-import NightModeToggle from "@/components/NightModeToggle";
-import BackgroundMusic from "@/components/BackgroundMusic";
-import LoveRiddleGate from "@/components/LoveRiddleGate";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
-  const [unlocked, setUnlocked] = useState(false);
-
-  if (!unlocked) {
-    return <LoveRiddleGate onUnlock={() => setUnlocked(true)} />;
-  }
+  const navigate = useNavigate();
 
   return (
-    <div className="relative overflow-x-hidden">
-      <FloatingHearts />
-      <NightModeToggle />
-      <BackgroundMusic />
+    <>
       <HeroSection />
-      <LoveStory />
-      <ReasonsSection />
-      <MemoryGallery />
-      <CountdownTimer />
-      <ProposalSection />
-
-      {/* Footer */}
-      <footer className="bg-gradient-dreamy py-12 text-center">
-        <p className="font-handwritten text-2xl text-foreground/60">
-          Made with all my love, for you Shalu 🧸💖
+      {/* Navigation hint */}
+      <motion.div
+        className="py-16 bg-gradient-section text-center px-4"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <p className="font-handwritten text-2xl text-foreground/60 mb-8">
+          Explore our love story… 💕
         </p>
-        <div className="mt-4 flex justify-center gap-2">
-          {["🧸", "💖", "💍", "💕", "✨"].map((emoji, i) => (
-            <span key={i} className="text-xl animate-bounce-gentle" style={{ animationDelay: `${i * 0.2}s` }}>
-              {emoji}
-            </span>
-          ))}
-        </div>
-      </footer>
-    </div>
+        <motion.button
+          onClick={() => navigate("/our-story")}
+          className="px-8 py-4 bg-primary text-primary-foreground font-body font-semibold text-lg rounded-full shadow-dreamy glow-pink"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Begin Our Story 💌
+        </motion.button>
+      </motion.div>
+    </>
   );
 };
 

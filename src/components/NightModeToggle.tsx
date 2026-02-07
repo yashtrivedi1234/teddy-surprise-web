@@ -34,7 +34,7 @@ const NightModeToggle = () => {
     <>
       {/* Moon toggle button */}
       <motion.button
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-card shadow-dreamy border border-primary/20 flex items-center justify-center text-xl cursor-pointer"
+        className="fixed bottom-6 right-24 z-50 w-12 h-12 rounded-full bg-card shadow-dreamy border border-primary/20 flex items-center justify-center text-xl cursor-pointer"
         onClick={() => setIsNight(!isNight)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

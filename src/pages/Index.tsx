@@ -1,3 +1,4 @@
+import { useState } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
 import HeroSection from "@/components/HeroSection";
 import LoveStory from "@/components/LoveStory";
@@ -7,8 +8,15 @@ import CountdownTimer from "@/components/CountdownTimer";
 import ProposalSection from "@/components/ProposalSection";
 import NightModeToggle from "@/components/NightModeToggle";
 import BackgroundMusic from "@/components/BackgroundMusic";
+import LoveRiddleGate from "@/components/LoveRiddleGate";
 
 const Index = () => {
+  const [unlocked, setUnlocked] = useState(false);
+
+  if (!unlocked) {
+    return <LoveRiddleGate onUnlock={() => setUnlocked(true)} />;
+  }
+
   return (
     <div className="relative overflow-x-hidden">
       <FloatingHearts />

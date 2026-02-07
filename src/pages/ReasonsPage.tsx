@@ -1,0 +1,28 @@
+import ReasonsSection from "@/components/ReasonsSection";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+const ReasonsPage = () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <ReasonsSection />
+      <div className="py-12 bg-gradient-section text-center">
+        <motion.button
+          onClick={() => navigate("/memories")}
+          className="px-8 py-4 bg-primary text-primary-foreground font-body font-semibold text-lg rounded-full shadow-dreamy glow-pink"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Our Memories 📸
+        </motion.button>
+      </div>
+    </>
+  );
+};
+
+export default ReasonsPage;

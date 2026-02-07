@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import teddyProposal from "@/assets/teddy-proposal.png";
-import teddyHug from "@/assets/teddy-hug.png";
+import CelebrationStorybook from "./CelebrationStorybook";
 
 const ProposalSection = () => {
   const [answered, setAnswered] = useState(false);
@@ -10,8 +10,7 @@ const ProposalSection = () => {
 
   const handleYes = () => {
     setAnswered(true);
-    // Trigger hearts rain
-    const hearts = Array.from({ length: 50 }, (_, i) => i);
+    const hearts = Array.from({ length: 80 }, (_, i) => i);
     setHeartsRain(hearts);
   };
 
@@ -24,12 +23,35 @@ const ProposalSection = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-proposal overflow-hidden px-4 py-24">
-      {/* Hearts rain - Hidden Surprise #5 */}
+      {/* Romantic sparkles background */}
+      {[...Array(20)].map((_, i) => (
+        <motion.span
+          key={`sparkle-${i}`}
+          className="absolute text-sm pointer-events-none"
+          style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            opacity: [0, 0.8, 0],
+            scale: [0.5, 1.2, 0.5],
+          }}
+          transition={{
+            duration: 2 + Math.random() * 3,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+          }}
+        >
+          {["✨", "💫", "⭐", "🌟"][i % 4]}
+        </motion.span>
+      ))}
+
+      {/* Hearts rain celebration */}
       <AnimatePresence>
         {heartsRain.map((i) => (
           <motion.span
             key={i}
-            className="fixed text-2xl z-50 pointer-events-none"
+            className="fixed text-2xl md:text-3xl z-50 pointer-events-none"
             style={{
               left: `${Math.random() * 100}%`,
               top: "-5%",
@@ -42,11 +64,11 @@ const ProposalSection = () => {
             }}
             transition={{
               duration: 3 + Math.random() * 2,
-              delay: Math.random() * 2,
+              delay: Math.random() * 3,
               ease: "easeIn",
             }}
           >
-            {["💖", "💕", "💗", "🧸", "💍", "✨", "🌸", "💞"][i % 8]}
+            {["💖", "💕", "💗", "🧸", "💍", "✨", "🌸", "💞", "🎂", "🥂"][i % 10]}
           </motion.span>
         ))}
       </AnimatePresence>
@@ -59,35 +81,54 @@ const ProposalSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="mb-8"
+            className="mb-6 relative"
           >
+            {/* Glowing ring behind teddy */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-primary/20 blur-3xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
             <motion.img
               src={teddyProposal}
               alt="Teddy bear with ring"
-              className="w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl"
+              className="relative w-56 h-56 md:w-72 md:h-72 object-contain drop-shadow-2xl"
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
 
-          {/* Proposal text */}
-          <motion.h2
-            className="text-4xl md:text-6xl font-handwritten text-gradient-love text-center mb-4"
+          {/* Romantic proposal text */}
+          <motion.div
+            className="text-center mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            Shalu, will you marry me? 💍
-          </motion.h2>
+            <motion.p
+              className="text-lg md:text-xl font-handwritten text-foreground/60 mb-2"
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              ✨ My dearest Shalu ✨
+            </motion.p>
+            <h2 className="text-4xl md:text-6xl font-handwritten text-gradient-love">
+              Will you marry me? 💍
+            </h2>
+          </motion.div>
 
           <motion.p
-            className="text-lg font-body text-foreground/70 text-center mb-12"
+            className="text-base md:text-lg font-body text-foreground/70 text-center mb-10 max-w-md"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 1 }}
           >
+            Every love story is beautiful, but ours is my favorite. 
             This teddy has been waiting to ask you this… 🧸
           </motion.p>
 
@@ -115,7 +156,7 @@ const ProposalSection = () => {
                 boxShadow: { duration: 2, repeat: Infinity },
               }}
             >
-              Yes 🧸💖
+              Yes, Forever! 🧸💖
             </motion.button>
 
             <motion.button
@@ -130,79 +171,7 @@ const ProposalSection = () => {
           </motion.div>
         </>
       ) : (
-        /* After saying Yes - Hidden Surprise #5 reveal */
-        <motion.div
-          className="text-center z-40"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", damping: 12 }}
-        >
-          {/* Teddy hug */}
-          <motion.img
-            src={teddyHug}
-            alt="Happy teddy bear"
-            className="w-48 h-48 md:w-64 md:h-64 object-contain mx-auto mb-6 drop-shadow-2xl"
-            animate={{
-              scale: [1, 1.05, 1],
-              rotate: [-3, 3, -3],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-
-          <motion.h2
-            className="text-5xl md:text-7xl font-handwritten text-gradient-love mb-6"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            She said YES! 💍✨
-          </motion.h2>
-
-          <motion.p
-            className="text-2xl font-handwritten text-foreground/80 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            🧸 *teddy happy dance* 🧸
-          </motion.p>
-
-          <motion.div
-            className="bg-card/90 backdrop-blur-sm rounded-3xl p-8 max-w-md mx-auto shadow-dreamy border border-primary/20"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-            <p className="font-handwritten text-2xl text-primary leading-relaxed">
-              "I promise to love you in every lifetime." 💕
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="mt-8 flex justify-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.8 }}
-          >
-            {["💍", "🧸", "💖", "✨", "🌸", "💕"].map((emoji, i) => (
-              <motion.span
-                key={i}
-                className="text-3xl"
-                animate={{
-                  y: [0, -15, 0],
-                  rotate: [0, 10, -10, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.2,
-                }}
-              >
-                {emoji}
-              </motion.span>
-            ))}
-          </motion.div>
-        </motion.div>
+        <CelebrationStorybook />
       )}
     </section>
   );

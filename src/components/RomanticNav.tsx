@@ -8,6 +8,7 @@ const navItems = [
   { to: "/reasons", label: "Reasons", emoji: "🎀" },
   { to: "/memories", label: "Memories", emoji: "📸" },
   { to: "/countdown", label: "Countdown", emoji: "💍" },
+  { to: "/love-letter", label: "Love Letter", emoji: "💌" },
   { to: "/proposal", label: "Proposal", emoji: "💖" },
 ];
 

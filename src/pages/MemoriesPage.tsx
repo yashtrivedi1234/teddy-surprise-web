@@ -1,4 +1,5 @@
 import MemoryGallery from "@/components/MemoryGallery";
+import RelationshipTimeline from "@/components/RelationshipTimeline";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +8,7 @@ const MemoriesPage = () => {
 
   return (
     <>
+      <RelationshipTimeline />
       <MemoryGallery />
       <div className="py-12 bg-gradient-dreamy text-center">
         <motion.button

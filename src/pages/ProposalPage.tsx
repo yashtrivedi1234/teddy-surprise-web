@@ -7,7 +7,7 @@ const ProposalPage = () => {
       {/* Footer */}
       <footer className="bg-gradient-dreamy py-12 text-center">
         <p className="font-handwritten text-2xl text-foreground/60">
-          Made with all my love, for you Shalu 🧸💖
+          Made with all my love, for you 🧸💖
         </p>
         <div className="mt-4 flex justify-center gap-2">
           {["🧸", "💖", "💍", "💕", "✨"].map((emoji, i) => (

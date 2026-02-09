@@ -10,12 +10,12 @@ const riddles = [
   {
     question: "I'm given to you but you can't see me. I'm felt in the heart but never held. I grow stronger the more you share me. What am I?",
     answer: "love",
-    hint: "What does this teddy feel for Shalu? 🧸",
+    hint: "What does this teddy feel for you? 🧸",
   },
   {
     question: "I beat without a drum. I flutter without wings. I break without a sound. But when I'm yours, I sing. What am I?",
     answer: "heart",
-    hint: "It beats for you, Shalu 💖",
+    hint: "It beats for you 💖",
   },
 ];
 
@@ -99,7 +99,7 @@ const LoveRiddleGate = ({ onUnlock }: LoveRiddleGateProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              A Secret For Shalu 💌
+              A Secret For You 💌
             </motion.h1>
 
             <motion.p
@@ -213,7 +213,7 @@ const LoveRiddleGate = ({ onUnlock }: LoveRiddleGateProps) => {
               💖
             </motion.span>
             <p className="text-3xl font-handwritten text-gradient-love">
-              Welcome, Shalu ✨
+              Welcome, Beautiful ✨
             </p>
           </motion.div>
         </motion.div>

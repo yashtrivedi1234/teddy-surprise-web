@@ -88,7 +88,7 @@ const NightModeToggle = () => {
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                Good night, my forever Shalu 🌙💞
+                Good night, my forever love 🌙💞
               </motion.p>
             </motion.div>
           </motion.div>

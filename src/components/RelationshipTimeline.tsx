@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import girlAvatar from "@/assets/girl-avatar.png";
 
 const milestones = [
   {
@@ -162,8 +163,8 @@ const MilestoneCard = ({
           animate={isInView ? { scale: 1 } : {}}
           transition={{ delay: 0.3, type: "spring", damping: 10 }}
         >
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-rose flex items-center justify-center shadow-dreamy">
-            <span className="text-lg">{milestone.emoji}</span>
+          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-rose flex items-center justify-center shadow-dreamy overflow-hidden">
+            <img src={girlAvatar} alt="Her" className="w-full h-full object-cover" />
           </div>
           {/* Pulse ring */}
           <motion.div

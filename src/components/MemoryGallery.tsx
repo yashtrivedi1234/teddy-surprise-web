@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import girlAvatar from "@/assets/girl-avatar.png";
 
 const memories = [
   { id: 1, note: "This moment lives in my heart 🧸💕", color: "bg-baby-pink", rotation: -3 },
@@ -34,13 +35,11 @@ const MemoryCard = ({ memory, index }: { memory: typeof memories[0]; index: numb
         {/* Polaroid frame */}
         <div className="bg-card/90 rounded-xl p-2 pb-8 shadow-soft">
           <div className="w-full aspect-square bg-secondary/50 rounded-lg flex items-center justify-center overflow-hidden">
-            <motion.span
-              className="text-5xl"
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-            >
-              {["📸", "🌸", "🎀", "✨", "💕", "🧸"][index]}
-            </motion.span>
+            <img
+              src={girlAvatar}
+              alt="Memory"
+              className="w-full h-full object-cover opacity-90"
+            />
           </div>
           <p className="font-handwritten text-center text-foreground/60 text-lg mt-2">
             Memory #{memory.id}

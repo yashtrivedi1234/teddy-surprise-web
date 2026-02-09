@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import teddyHero from "@/assets/teddy-hero.png";
+import girlAvatar from "@/assets/girl-avatar.png";
 
 const HeroSection = () => {
   const [showLetter, setShowLetter] = useState(false);
@@ -47,7 +48,7 @@ const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        Hey Shalu…
+        Hey Beautiful…
       </motion.h1>
 
       <motion.p
@@ -58,6 +59,18 @@ const HeroSection = () => {
       >
         This Teddy Has Something to Tell You 🧸💖
       </motion.p>
+
+      {/* Girl avatar */}
+      <motion.div
+        className="mb-4 z-20"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
+        <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-primary/30 shadow-dreamy">
+          <img src={girlAvatar} alt="Her" className="w-full h-full object-cover" />
+        </div>
+      </motion.div>
 
       {/* Clickable Teddy */}
       <motion.div
@@ -149,7 +162,7 @@ const HeroSection = () => {
                   A Secret Message…
                 </h3>
                 <p className="text-lg font-body text-foreground/80 leading-relaxed">
-                  Shalu, you are the safest place my heart has ever known 💕
+                  You are the safest place my heart has ever known 💕
                 </p>
                 <motion.div
                   className="mt-6 flex justify-center gap-2"

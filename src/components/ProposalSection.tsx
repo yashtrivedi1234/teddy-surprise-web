@@ -114,7 +114,7 @@ const ProposalSection = () => {
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              ✨ My dearest Shalu ✨
+              ✨ My dearest love ✨
             </motion.p>
             <h2 className="text-4xl md:text-6xl font-handwritten text-gradient-love">
               Will you marry me? 💍

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 const letterLines = [
-  { text: "My Dearest Shalu,", delay: 0, size: "text-3xl md:text-4xl" },
+  { text: "My Dearest Love,", delay: 0, size: "text-3xl md:text-4xl" },
   { text: "", delay: 0.1, size: "" },
   {
     text: "From the very first moment I saw you, something inside me just knew — you were the one my heart had been waiting for.",

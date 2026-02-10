@@ -8,12 +8,12 @@ import memory5 from "@/assets/memory-5.png";
 import memory6 from "@/assets/memory-6.png";
 
 const memories = [
-  { id: 1, img: memory1, note: "This moment lives in my heart 🧸💕", color: "bg-baby-pink", rotation: -3 },
-  { id: 2, img: memory2, note: "I smile every time I think of this 💖", color: "bg-peach", rotation: 2 },
-  { id: 3, img: memory3, note: "One of my favorite days with you 🌸", color: "bg-lavender", rotation: -1 },
-  { id: 4, img: memory4, note: "You looked so beautiful here ✨", color: "bg-cream", rotation: 3 },
-  { id: 5, img: memory5, note: "I want a million more moments like this 💕", color: "bg-baby-pink", rotation: -2 },
-  { id: 6, img: memory6, note: "My heart was so full this day 🧸", color: "bg-peach", rotation: 1 },
+  { id: 1, img: memory1, caption: "Golden hour smiles", note: "This moment lives in my heart 🧸💕", color: "bg-baby-pink", rotation: -3 },
+  { id: 2, img: memory2, caption: "Our little cafe dates", note: "I smile every time I think of this 💖", color: "bg-peach", rotation: 2 },
+  { id: 3, img: memory3, caption: "Sunset by the sea", note: "One of my favorite days with you 🌸", color: "bg-lavender", rotation: -1 },
+  { id: 4, img: memory4, caption: "Spring blooms & you", note: "You looked so beautiful here ✨", color: "bg-cream", rotation: 3 },
+  { id: 5, img: memory5, caption: "Quiet cozy mornings", note: "I want a million more moments like this 💕", color: "bg-baby-pink", rotation: -2 },
+  { id: 6, img: memory6, caption: "Dancing in the rain", note: "My heart was so full this day 🧸", color: "bg-peach", rotation: 1 },
 ];
 
 const MemoryCard = ({ memory, index }: { memory: typeof memories[0]; index: number }) => {
@@ -47,7 +47,7 @@ const MemoryCard = ({ memory, index }: { memory: typeof memories[0]; index: numb
             />
           </div>
           <p className="font-handwritten text-center text-foreground/60 text-lg mt-2">
-            Memory #{memory.id}
+            {memory.caption}
           </p>
         </div>
 

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="valentineHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9a9e"/>
+      <stop offset="50%" stop-color="#ff6a88"/>
+      <stop offset="100%" stop-color="#ff99ac"/>
+    </linearGradient>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="0 0 0 0 1
+                0 0 0 0 0.6
+                0 0 0 0 0.75
+                0 0 0 0.7 0"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#1b1024"/>
+  <g filter="url(#softGlow)">
+    <path
+      d="M32 49s-8.4-6.2-13.8-11.6C13.4 32.6 11 29.4 11 25.2 11 19.9 15 16 19.9 16c3.1 0 5.9 1.7 7.6 4.4C29.2 17.7 32 16 35.1 16 40 16 44 19.9 44 25.2c0 4.2-2.4 7.4-7.2 12.2C40.4 42.8 32 49 32 49z"
+      fill="url(#valentineHeartGradient)"
+    />
+  </g>
+  <circle cx="25" cy="22" r="3" fill="white" opacity="0.7"/>
+  <circle cx="39" cy="20" r="2" fill="white" opacity="0.45"/>
+</svg>

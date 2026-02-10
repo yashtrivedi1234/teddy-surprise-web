@@ -2,7 +2,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { ReactNode, useState, useEffect } from "react";
 
-const transitionEmojis = ["💖", "🧸", "💕", "✨", "🌸", "💍", "💞", "🎀"];
+// Focus the route transition on heart‑style emojis for a stronger Valentine vibe
+const transitionEmojis = ["💖", "💘", "💝", "💞", "💓", "💗", "❤️", "💕"];
 
 const PageTransition = ({ children }: { children: ReactNode }) => {
   const location = useLocation();

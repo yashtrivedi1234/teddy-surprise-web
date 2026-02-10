@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import girlAvatar from "@/assets/girl-avatar.png";
+import memory1 from "@/assets/memory-1.png";
+import memory2 from "@/assets/memory-2.png";
+import memory3 from "@/assets/memory-3.png";
+import memory4 from "@/assets/memory-4.png";
+import memory5 from "@/assets/memory-5.png";
+import memory6 from "@/assets/memory-6.png";
 
 const memories = [
-  { id: 1, note: "This moment lives in my heart 🧸💕", color: "bg-baby-pink", rotation: -3 },
-  { id: 2, note: "I smile every time I think of this 💖", color: "bg-peach", rotation: 2 },
-  { id: 3, note: "One of my favorite days with you 🌸", color: "bg-lavender", rotation: -1 },
-  { id: 4, note: "You looked so beautiful here ✨", color: "bg-cream", rotation: 3 },
-  { id: 5, note: "I want a million more moments like this 💕", color: "bg-baby-pink", rotation: -2 },
-  { id: 6, note: "My heart was so full this day 🧸", color: "bg-peach", rotation: 1 },
+  { id: 1, img: memory1, note: "This moment lives in my heart 🧸💕", color: "bg-baby-pink", rotation: -3 },
+  { id: 2, img: memory2, note: "I smile every time I think of this 💖", color: "bg-peach", rotation: 2 },
+  { id: 3, img: memory3, note: "One of my favorite days with you 🌸", color: "bg-lavender", rotation: -1 },
+  { id: 4, img: memory4, note: "You looked so beautiful here ✨", color: "bg-cream", rotation: 3 },
+  { id: 5, img: memory5, note: "I want a million more moments like this 💕", color: "bg-baby-pink", rotation: -2 },
+  { id: 6, img: memory6, note: "My heart was so full this day 🧸", color: "bg-peach", rotation: 1 },
 ];
 
 const MemoryCard = ({ memory, index }: { memory: typeof memories[0]; index: number }) => {
@@ -36,8 +41,8 @@ const MemoryCard = ({ memory, index }: { memory: typeof memories[0]; index: numb
         <div className="bg-card/90 rounded-xl p-2 pb-8 shadow-soft">
           <div className="w-full aspect-square bg-secondary/50 rounded-lg flex items-center justify-center overflow-hidden">
             <img
-              src={girlAvatar}
-              alt="Memory"
+              src={memory.img}
+              alt={`Memory #${memory.id}`}
               className="w-full h-full object-cover opacity-90"
             />
           </div>

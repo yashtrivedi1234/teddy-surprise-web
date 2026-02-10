@@ -10,6 +10,8 @@ const navItems = [
   { to: "/countdown", label: "Countdown", emoji: "💍" },
   { to: "/love-letter", label: "Love Letter", emoji: "💌" },
   { to: "/proposal", label: "Proposal", emoji: "💖" },
+  // Simple admin entry – you can hide/remove from here if you want a secret route
+  { to: "/admin", label: "Admin", emoji: "🛠️" },
 ];
 
 const RomanticNav = () => {
